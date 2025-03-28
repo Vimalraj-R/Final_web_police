@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Parking - AI Parking System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .leaflet-popup-content {
+            text-align: center;
+        }
+        .parking-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .parking-availability {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        .parking-details {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🚓 Tamil Nadu Police Smart Parking System</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./parking.html">Find Parking</a></li>
+                <li><a href="./police.html">Police Dashboard</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="https://trafficpolice-x4hfuhhvzyypxm3jqbsnsg.streamlit.app/">Weather Prediction</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="parking-search">
+        <h2>Find Parking Near Your Destination</h2>
+        <p>Enter your destination to check parking availability.</p>
+
+        <form action="/find_parking" method="post" id="parkingForm">
+            <label for="destination">Enter Destination :</label>
+            <input type="string" id="destination" name="destination" required>
+
+            <label for="hour">Enter Time (Hour):</label>
+            <input type="number" id="hour" name="hour" required min="0" max="24">
+
+            <div class="parking-info">
+                <span>Estimated Parking Time:</span>
+                <span id="estimatedTime">-</span>
+            </div>
+
+            <a href="https://parkmap-jbkmt3nbdakdv96kgr77nf.streamlit.app/" type="submit" class="btn">Find Parking</a>
+        </form>
+
+        <div class="result">
+            <h3>Parking Availability: 50</h3>
+            <p>Suggested Alternative Parking Locations:</p>
+                <li>🅿 Parking Lot 2 - Available</li>
+                <li>🅿 Parking Lot 3 - Available</li>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <h3>🗺 Parking Locations Map</h3>
+        <div id="map"></div>
+        <div class="parking-details">
+            <h4>Parking Location Details</h4>
+            <div id="parkingDetails">Select a parking spot on the map for more information</div>
+        </div>
+    </section>
+
+    <section class="transport-options">
+        <h3>🚍 How to Reach Your Destination</h3>
+        <p>If your parking spot is far, you can use:</p>
+        <ul>
+            <li>🚌 Public Transport (Bus, Metro)</li>
+            <li>🚕 Auto-rickshaw</li>
+            <li>🚶 Walking Routes</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2025 Tamil Nadu Police Smart Parking System. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Map initialization
+        var map = L.map('map').setView([13.0827, 80.2707], 13);
+
+        // Load OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Enhanced parking locations with more details
+        var parkingSpots = [
+            { 
+                name: "Parking Lot 1", 
+                lat: 13.0827, 
+                lon: 80.2707,
+                totalSpots: 100,
+                availableSpots: 50,
+                type: "Multi-level Parking",
+                rates: {
+                    hourly: "₹20",
+                    daily: "₹200"
+                }
+            },
+            { 
+                name: "Parking Lot 2", 
+                lat: 13.0700, 
+                lon: 80.2500,
+                totalSpots: 75,
+                availableSpots: 30,
+                type: "Street Parking",
+                rates: {
+                    hourly: "₹15",
+                    daily: "₹150"
+                }
+            },
+            { 
+                name: "Parking Lot 3", 
+                lat: 13.0600, 
+                lon: 80.2400,
+                totalSpots: 50,
+                availableSpots: 20,
+                type: "Underground Parking",
+                rates: {
+                    hourly: "₹25",
+                    daily: "₹250"
+                }
+            }
+        ];
+
+        // Custom parking icon
+        var parkingIcon = L.divIcon({
+            className: 'custom-div-icon',
+            html: "<div style='background-color:#4CAF50;' class='marker-pin'></div><i class='fas fa-parking awesome'>",
+            iconSize: [30, 42],
+            iconAnchor: [15, 42]
+        });
+
+        // Add markers with enhanced popups
+        parkingSpots.forEach(function(spot) {
+            var marker = L.marker([spot.lat, spot.lon], {icon: parkingIcon})
+                .addTo(map)
+                .bindPopup(`
+                    <b>${spot.name}</b><br>
+                    Total Spots: ${spot.totalSpots}<br>
+                    Available: ${spot.availableSpots}<br>
+                    Type: ${spot.type}<br>
+                    Hourly Rate: ${spot.rates.hourly}<br>
+                    Daily Rate: ${spot.rates.daily}
+                `)
+                .on('click', function() {
+                    document.getElementById('parkingDetails').innerHTML = `
+                        <h5>${spot.name} Details</h5>
+                        <p><strong>Total Spots:</strong> ${spot.totalSpots}</p>
+                        <p><strong>Available Spots:</strong> ${spot.availableSpots}</p>
+                        <p><strong>Parking Type:</strong> ${spot.type}</p>
+                        <div class="parking-rates">
+                            <p><strong>Rates:</strong></p>
+                            <p>Hourly: ${spot.rates.hourly}</p>
+                            <p>Daily: ${spot.rates.daily}</p>
+                        </div>
+                    `;
+                });
+        });
+
+        // Form interaction for estimated parking time
+        document.getElementById('parkingForm').addEventListener('input', function() {
+            var hours = document.getElementById('hour').value;
+            var estimatedTimeElem = document.getElementById('estimatedTime');
+            
+            if (hours) {
+                var currentTime = new Date();
+                currentTime.setHours(currentTime.getHours() + parseInt(hours));
+                estimatedTimeElem.textContent = currentTime.toLocaleTimeString();
+            } else {
+                estimatedTimeElem.textContent = '-';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Police Dashboard for Tamil Nadu Smart Parking System - Monitor parking spaces, traffic congestion, and receive real-time alerts.">
+    <meta name="keywords" content="Police Dashboard, Smart Parking, Tamil Nadu, Traffic Monitoring, Parking Availability, CCTV Feeds">
+    <meta name="author" content="Tamil Nadu Police Department">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police Dashboard - AI Parking System</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>🚓 Tamil Nadu Police Smart Parking System</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./parking.html">Find Parking</a></li>
+                <li><a href="./police.html">Police Dashboard</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="https://trafficpolice-x4hfuhhvzyypxm3jqbsnsg.streamlit.app/">Weather Prediction</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="police-dashboard">
+        <h2>🔍 Parking & Surveillance Dashboard</h2>
+        <p>Authorized police officers can monitor parking spaces and traffic congestion in real-time.</p>
+        <h3>🛠️ Dashboard Controls</h3>
+        <div class="dashboard-controls">
+            <button onclick="alert('Refreshing data...')">🔄 Refresh Data</button>
+            <button onclick="alert('Generating report...')">📄 Generate Report</button>
+            <button onclick="alert('Sending alert to units...')">🚨 Send Alert</button>
+            <button onclick="alert('Viewing historical data...')">📈 View Historical Data</button>
+            <button onclick="alert('Configuring settings...')">⚙️ Configure Settings</button>
+        </div>
+        <h3>📷 Live CCTV Parking Feeds</h3>
+        <img src="{{ url_for('static', filename='cctv-placeholder.jpg') }}" alt="CCTV Feed Placeholder" width="100%">
+
+        <h3>📊 Parking Availability Report</h3>
+        <table border="1">
+            <tr>
+                <th>Parking Location</th>
+                <th>Availability</th>
+                <th>Last Updated</th>
+            </tr>
+            <tr>
+                <td>🅿️ Parking Lot 1</td>
+                <td>Available</td>
+                <td>Just Now</td>
+            </tr>
+            <tr>
+                <td>🅿️ Parking Lot 2</td>
+                <td>Full</td>
+                <td>5 min ago</td>
+            </tr>
+            <tr>
+                <td>🅿️ Parking Lot 3</td>
+                <td>🅿️ Parking Lot 3</td>
+                <td>Available</td>
+                <td>2 min ago</td>
+                <td>2 min ago</td>
+            </tr>
+        </table>
+
+        <h3>⚠️ Traffic & Illegal Parking Alerts</h3>
+        <ul>
+            <li>🚨 High Congestion near Chennai Central - Action Needed</li>
+            <li>🚗 Illegal Parking at Marina Beach - Fine Issued</li>
+            <li>🚦 Heavy Traffic near Anna Nagar - Divert Route</li>
+            <li>🅿️ Illegal Parking at T. Nagar - Tow Truck Dispatched</li>
+            <li>🚧 Roadblock near Guindy - Clear Path Required</li>
+            <li>🚨 Accident Reported at OMR - Emergency Services Notified</li>
+            <li>🚗 Unauthorized Parking at Coimbatore Junction - Fine Issued</li>
+            <li>🚦 Signal Malfunction at Adyar - Maintenance Team Alerted</li>
+            <li>🚨 High Congestion near Madurai Meenakshi Temple - Traffic Police Deployed</li>
+            <li>🚗 Illegal Parking at Velachery - Warning Issued</li>
+            <li>🚧 Construction Work near Tambaram - Traffic Diversion in Place</li>
+            <li>🚦 Heavy Traffic near Trichy Bus Stand - Monitor Situation</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2025 Tamil Nadu Police Smart Parking System. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,1057 @@
+/* Modern Interactive CSS for Smart Parking Website */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    line-height: 1.6;
+    position: relative;
+}
+
+/* Logo Watermark Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    background-image: url('tamilnadu-police-logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+header {
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.9) 0%, rgba(52, 152, 219, 0.9) 100%);
+    color: white;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+}
+
+header h1 {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+}
+
+header h1 i {
+    margin-right: 15px;
+    color: #ecf0f1;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ecf0f1;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    background: linear-gradient(45deg, rgba(52, 152, 219, 0.9) 0%, rgba(41, 128, 185, 0.9) 100%);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    position: relative;
+    z-index: 5;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #f39c12;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+    background-color: #d35400;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+}
+
+.features {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.features h3 {
+    color: #2c3e50;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    position: relative;
+}
+
+.features h3::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: #3498db;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.features li {
+    display: inline-block;
+    width: 200px;
+    margin: 15px;
+    padding: 25px;
+    background-color: rgba(248, 249, 250, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.features li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.features li i {
+    font-size: 3rem;
+    color: #3498db;
+    margin-bottom: 15px;
+}
+
+.features li h4 {
+    color: #2c3e50;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: rgba(44, 62, 80, 0.9);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 5;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Additional Interactive Touches */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.features li:hover {
+    animation: pulse 1s infinite;
+}:root {
+    --primary-color: #1A73E8;
+    --secondary-color: #4CAF50;
+    --background-color: #F4F6F9;
+    --text-color: #333;
+    --accent-color: #FF6B6B;
+    --hover-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Interactive Header */
+header {
+    background-color: white;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: var(--hover-transition);
+}
+
+header:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    background-color: var(--primary-color);
+    transition: var(--hover-transition);
+}
+
+nav ul li {
+    position: relative;
+    padding: 15px 20px;
+    overflow: hidden;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+    transition: var(--hover-transition);
+}
+
+nav ul li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.2);
+    transition: var(--hover-transition);
+    z-index: 0;
+}
+
+nav ul li:hover::before {
+    left: 0;
+}
+
+nav ul li:hover a {
+    color: white;
+}
+
+/* Interactive Parking Search */
+.parking-search {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    transition: var(--hover-transition);
+}
+
+.parking-search:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+#parkingForm input {
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: var(--hover-transition);
+    font-size: 16px;
+}
+
+#parkingForm input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+}
+
+.btn {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--hover-transition);
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.2);
+    transition: var(--hover-transition);
+}
+
+.btn:hover::before {
+    left: 0;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+/* Interactive Map Section */
+.map-section {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    transition: var(--hover-transition);
+}
+
+.map-section:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+#map {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: var(--hover-transition);
+}
+
+#map:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.parking-details {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    transition: var(--hover-transition);
+}
+
+.parking-details:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.02);
+}
+
+/* Interactive Transport Options */
+.transport-options ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin-top: 20px;
+}
+
+.transport-options ul li {
+    text-align: center;
+    font-size: 2rem;
+    transition: var(--hover-transition);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.transport-options ul li:hover {
+    background-color: rgba(0,0,0,0.05);
+    transform: scale(1.1);
+}
+
+/* Footer Interactivity */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 100px;
+    transition: var(--hover-transition);
+}
+
+footer:hover {
+    background-color: #1566c7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .search-container {
+        flex-direction: column;
+    }
+}
+
+/* Accessibility and Focus States */
+*:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Scroll Bar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1566c7;
+}
+:root {
+    --primary-color: #1A73E8;
+    --secondary-color: #4CAF50;
+    --background-color: #F4F6F9;
+    --text-color: #333;
+    --accent-color: #FF6B6B;
+    --hover-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    perspective: 1000px;
+}
+
+/* Playful Header Animation */
+header {
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: var(--hover-transition);
+    transform-style: preserve-3d;
+}
+
+header:hover {
+    transform: rotateX(5deg);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Quirky Navigation */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    background-color: var(--primary-color);
+    transition: var(--hover-transition);
+}
+
+nav ul li {
+    padding: 15px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+    transition: var(--hover-transition);
+}
+
+nav ul li::before {
+    content: '🚨';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: var(--hover-transition);
+}
+
+nav ul li:hover::before {
+    top: -20px;
+    opacity: 1;
+}
+
+nav ul li:hover a {
+    transform: scale(1.1);
+}
+
+/* Main Content Styling */
+.about-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    transition: var(--hover-transition);
+}
+
+.about-section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* Humorous List Styling */
+.about-subsection ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-subsection li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    transition: var(--hover-transition);
+    cursor: pointer;
+}
+
+.about-subsection li:hover {
+    background-color: #f0f0f0;
+    transform: translateX(10px);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+}
+
+.about-subsection .emoji {
+    font-size: 2rem;
+    margin-right: 15px;
+    transition: var(--hover-transition);
+}
+
+.about-subsection li:hover .emoji {
+    transform: rotate(360deg);
+}
+
+.about-subsection .description {
+    flex-grow: 1;
+    transition: var(--hover-transition);
+}
+
+.about-subsection li:hover .description {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Playful Hover Effects */
+h2, h3 {
+    position: relative;
+    display: inline-block;
+    transition: var(--hover-transition);
+}
+
+h2::after, h3::after {
+    content: '🚗';
+    position: absolute;
+    top: -20px;
+    right: -30px;
+    opacity: 0;
+    transition: var(--hover-transition);
+}
+
+h2:hover::after, h3:hover::after {
+    opacity: 1;
+    top: -30px;
+}
+
+/* Footer Fun */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    transition: var(--hover-transition);
+}
+
+footer:hover {
+    background-color: #FF6B6B;
+    transform: skew(-5deg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 10px;
+        margin: 10px;
+    }
+}
+
+/* Accessibility */
+*:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Scroll Bar Styling with a Twist */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+}
+
+/* Cheeky Cursor Interaction */
+body {
+    cursor: default;
+}
+
+body:hover {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%231A73E8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'%3E%3C/path%3E%3C/svg%3E"), auto;
+}
+/* Police-themed color palette with a playful twist */
+:root {
+    --primary-color: #0A2342;       /* Deep navy blue (police uniform) */
+    --secondary-color: #2274A5;     /* Bright police blue */
+    --accent-color: #FF5A5F;        /* Vibrant emergency red */
+    --background-color: #F5F5F5;    /* Light gray background */
+    --text-color: #333333;
+}
+
+/* Global Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Navigation Styling */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 1rem;
+    background-color: var(--secondary-color);
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+/* Contact Section */
+.contact-section {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.contact-section h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 5px;
+    outline: none;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(255,90,95,0.5);
+}
+
+button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+/* Interactive Emoji Animations */
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+}
+
+h1 emoji, h3 emoji {
+    display: inline-block;
+    animation: wiggle 0.5s infinite;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-section {
+        width: 95%;
+        padding: 1rem;
+    }
+}
+
+/* Subtle Interaction Hints */
+input:hover, textarea:hover {
+    background-color: #f0f0f0;
+}
+
+/* Form Validation Styling */
+input:invalid, textarea:invalid {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(255,90,95,0.5);
+}
+
+/* Accessibility Improvements */
+a:focus, button:focus {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+/* Police Dashboard Color Scheme */
+:root {
+    --primary-color: #0A2342;       /* Deep navy blue (police uniform) */
+    --secondary-color: #2274A5;     /* Bright police blue */
+    --alert-color: #FF5A5F;         /* Emergency red */
+    --success-color: #2ECC71;       /* Safety green */
+    --warning-color: #F39C12;       /* Caution yellow */
+    --background-color: #F5F5F5;    /* Light gray background */
+    --text-color: #333333;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Navigation Styling */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 1rem;
+    background-color: var(--secondary-color);
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--alert-color);
+    transform: scale(1.1);
+}
+
+/* Police Dashboard Section */
+.police-dashboard {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.police-dashboard h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* CCTV Feed Styling */
+.police-dashboard img {
+    border-radius: 10px;
+    max-height: 400px;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.police-dashboard img:hover {
+    transform: scale(1.02);
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+}
+
+table th {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #e6e6e6;
+}
+
+/* Parking Availability Styling */
+table td[data-status="Available"] {
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+table td[data-status="Full"] {
+    color: var(--alert-color);
+    font-weight: bold;
+}
+
+/* Traffic Alerts Styling */
+.police-dashboard ul {
+    list-style-type: none;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.police-dashboard ul li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.police-dashboard ul li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Alert Color Coding */
+.police-dashboard ul li:nth-child(1) {
+    background-color: rgba(255, 90, 95, 0.1);
+    border-left: 5px solid var(--alert-color);
+}
+
+.police-dashboard ul li:nth-child(2) {
+    background-color: rgba(46, 204, 113, 0.1);
+    border-left: 5px solid var(--success-color);
+}
+
+.police-dashboard ul li:nth-child(3) {
+    background-color: rgba(241, 196, 15, 0.1);
+    border-left: 5px solid var(--warning-color);
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.police-dashboard ul li:hover {
+    animation: pulse 0.5s ease;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .police-dashboard {
+        padding: 1rem;
+        width: 95%;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+}
+
+/* Emoji Hover Effects */
+h2 emoji, h3 emoji {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+h2 emoji:hover, h3 emoji:hover {
+    transform: rotate(360deg);
+}
