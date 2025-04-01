@@ -1,5 +1,5 @@
-#SPOTFINDER Overview
-🅿️ Spot Finder – Smart Parking Management System 🚗
+
+🅿️ Spot Finder Overview – Smart Parking Management System 🚗
 🔹 Real-Time Parking Availability 📍 – Find open spots instantly.
 🔹 Interactive Map & Navigation 🗺️ – Get guided to the nearest parking.
 🔹 Seamless Reservations 📅 – Book your parking in advance.
